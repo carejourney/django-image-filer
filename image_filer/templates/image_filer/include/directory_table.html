@@ -42,6 +42,7 @@
 					</td>
 					<td style="text-align: right;">
 						<form action="{% url admin:image_filer-move_file_to_clipboard %}" method="post">
+							{% csrf_token %}
 							<input type="hidden" name="file_id" value="{{ file.id }}" />
 							<input type="hidden" name="redirect_to" value="{{ current_url }}" />
 							{% if is_popup %}<input type="hidden" name="_popup" value="1" />{% endif %}
